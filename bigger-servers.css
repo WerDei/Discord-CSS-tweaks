@@ -1,0 +1,74 @@
+:root {
+  --bssf-selected-border: 0;
+  --bssf-selected-color: none;
+  /* --bssf-selected-border: 3px;
+  --bssf-selected-color: var(--header-primary); */
+  /* --bssf-folder-size: 40px; */
+  --bssf-server-size: 48px;
+
+  /* --bssf-folder-svg-size: calc(var(--bssf-folder-size) + 8px); */
+  --bssf-server-svg-size: calc(var(--bssf-server-size) + 8px);
+}
+
+/* folders */
+/* .wrapper__48112 div.wrapper_cc5dd2 {
+  --guildbar-folder-size: var(--bssf-folder-size);
+  width: var(--bssf-folder-size) !important;
+  height: var(--bssf-folder-size) !important;
+}
+.wrapper__48112.isExpanded__48112 div.wrapper_cc5dd2 {
+  --guildbar-folder-size: var(--bssf-server-size);
+  width: var(--bssf-server-size) !important;
+  height: var(--bssf-server-size) !important;
+} */
+
+/* opened folder */
+ul.stack_dbd263 {
+  height: fit-content !important;
+  padding-bottom: 4px !important;
+
+  /* space for the outline */
+  padding-top: var(--bssf-selected-border) !important;
+  margin-top: calc(var(--bssf-selected-border) * -1);  
+}
+.expandedFolderBackground__48112 {
+  --guildbar-folder-size: calc(var(--bssf-server-size) + 8px );
+}
+
+/* servers and DMs*/
+.wrapper_cc5dd2 {
+  width: var(--bssf-server-size) !important;
+  height: var(--bssf-server-size) !important;  
+
+  > svg {
+    width: var(--bssf-server-svg-size) !important;
+    height: var(--bssf-server-svg-size) !important;
+  }
+}
+.stack_dbd263 > div:not([class]) {
+  height: var(--bssf-server-size) !important;
+}
+#\:r7\:-lower_badge_masks {
+  x: 23.5;
+  y: 23.5;
+}
+#\:rt5\:-upper_badge_masks {
+  x: 24;
+  y: -3.5;
+}
+
+/* selected server outline*/
+.blobContainer_e5445c.selected_e5445c {
+  margin: calc(var(--bssf-selected-border) * -1);
+  border-width: var(--bssf-selected-border);
+
+  border-radius: 14px;
+  border-style: solid;
+  border-color: var(--bssf-selected-color);
+  background-color: var(--bssf-selected-color);
+  transition: border-color 50ms ease-in;
+}
+
+/* .tutorialContainer__650eb {
+  margin-top: 8px;
+} */

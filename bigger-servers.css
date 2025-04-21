@@ -1,74 +1,72 @@
 :root {
-  --bssf-selected-border: 0;
-  --bssf-selected-color: none;
-  /* --bssf-selected-border: 3px;
-  --bssf-selected-color: var(--header-primary); */
-  /* --bssf-folder-size: 40px; */
-  --bssf-server-size: 48px;
-
-  /* --bssf-folder-svg-size: calc(var(--bssf-folder-size) + 8px); */
-  --bssf-server-svg-size: calc(var(--bssf-server-size) + 8px);
+  --bssf-icon-size: 48px;
+  --bssf-smol-icon-size: 40px;
+  --bssf-badge-color: var(--background-base-lowest);
+  
+  /* Optional configuratrions */
+  /* --bssf-server-size: 48px;
+  --bssf-extras-size: 48px; */
 }
-
-/* folders */
-/* .wrapper__48112 div.wrapper_cc5dd2 {
-  --guildbar-folder-size: var(--bssf-folder-size);
-  width: var(--bssf-folder-size) !important;
-  height: var(--bssf-folder-size) !important;
-}
-.wrapper__48112.isExpanded__48112 div.wrapper_cc5dd2 {
-  --guildbar-folder-size: var(--bssf-server-size);
-  width: var(--bssf-server-size) !important;
-  height: var(--bssf-server-size) !important;
-} */
 
 /* opened folder */
 ul.stack_dbd263 {
   height: fit-content !important;
   padding-bottom: 4px !important;
-
-  /* space for the outline */
-  padding-top: var(--bssf-selected-border) !important;
-  margin-top: calc(var(--bssf-selected-border) * -1);  
 }
 .expandedFolderBackground__48112 {
-  --guildbar-folder-size: calc(var(--bssf-server-size) + 8px );
+  --guildbar-folder-size: calc(var(--bssf-icon-size) + 8px );
 }
 
-/* servers and DMs*/
+/* enlarge things */
 .wrapper_cc5dd2 {
-  width: var(--bssf-server-size) !important;
-  height: var(--bssf-server-size) !important;  
+  width: var(--bssf-icon-size) !important;
+  height: var(--bssf-icon-size) !important;  
 
   > svg {
-    width: var(--bssf-server-svg-size) !important;
-    height: var(--bssf-server-svg-size) !important;
+    --bssf-icon-svg-size: calc(var(--bssf-icon-size) + 8px);
+    width: var(--bssf-icon-svg-size) !important;
+    height: var(--bssf-icon-svg-size) !important;
+
+    /* Keeping consistent badge cutout is too hard with */
+    /* my spaghetti code. I simply fake it later on. */
+    [id$="-lower_badge_masks"],
+    [id$="-upper_badge_masks"] {
+      display: none;
+    }
   }
 }
-.stack_dbd263 > div:not([class]) {
-  height: var(--bssf-server-size) !important;
+
+/* keep folders, "new server" and "explore" smol */
+.wrapper__48112:not(.isExpanded__48112) div.wrapper_cc5dd2 
+{
+  --bssf-icon-size: var(--bssf-server-size, var(--bssf-smol-icon-size));
 }
-#\:r7\:-lower_badge_masks {
-  x: 23.5;
-  y: 23.5;
-}
-#\:rt5\:-upper_badge_masks {
-  x: 24;
-  y: -3.5;
+.tutorialContainer__650eb,
+.tutorialContainer__650eb + .listItem__650eb {
+  --bssf-icon-size: var(--bssf-extras-size, var(--bssf-smol-icon-size));
 }
 
-/* selected server outline*/
-.blobContainer_e5445c.selected_e5445c {
-  margin: calc(var(--bssf-selected-border) * -1);
-  border-width: var(--bssf-selected-border);
+/* DM container height*/
+guilds_c48ade .stack_dbd263 > div:not([class]) {
+  height: var(--bssf-icon-size) !important;
+}
 
-  border-radius: 14px;
+/* faking the badge cutout */
+.wrapper__48112.isExpanded__48112 {
+  /* Folder background is actually some transparency jank */
+  /* and not a constant, so please endure the horrors below: */
+  --bssf-bg-color: rgb(from var(--background-mod-subtle) r g b / none);
+  --bssf-badge-color: color-mix(
+    in srgb,    
+    var(--background-base-lowest), 
+    var(--bssf-bg-color) 8%
+  );
+}
+.upperBadge_cc5dd2,
+.lowerBadge_cc5dd2 {
+  margin: -3px;
+  border-width: 3px;
   border-style: solid;
-  border-color: var(--bssf-selected-color);
-  background-color: var(--bssf-selected-color);
-  transition: border-color 50ms ease-in;
+  border-color: var(--bssf-badge-color);
+  border-radius: var(--radius-round);
 }
-
-/* .tutorialContainer__650eb {
-  margin-top: 8px;
-} */

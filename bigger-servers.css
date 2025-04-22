@@ -47,7 +47,7 @@ ul.stack_dbd263 {
 }
 
 /* DM container height*/
-guilds_c48ade .stack_dbd263 > div:not([class]) {
+.tutorialContainer__1f388 ~ div:not([class]):not([aria-hidden]) {
   height: var(--bssf-icon-size) !important;
 }
 

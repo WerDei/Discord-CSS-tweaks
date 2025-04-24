@@ -3,9 +3,10 @@
     --bssf-smol-icon-size: 40px;
     --bssf-badge-color: var(--background-base-lowest);
 
-    /* Optional configuratrions */
-    /* --bssf-server-size: 48px;
-  --bssf-extras-size: 48px; */
+    /* Don't shrink the folders */
+    /* --bssf-folder-size: 48px; */
+    /* Make the "Add a Server" and "Explore" buttons just as big */
+    /* --bssf-extras-size: 48px;  */
 }
 
 /* opened folder */
@@ -38,7 +39,7 @@ ul.stack_dbd263 {
 
 /* keep folders, "new server" and "explore" smol */
 .wrapper__48112:not(.isExpanded__48112) div.wrapper_cc5dd2 {
-    --bssf-icon-size: var(--bssf-server-size, var(--bssf-smol-icon-size));
+    --bssf-icon-size: var(--bssf-folder-size, var(--bssf-smol-icon-size));
 }
 .tutorialContainer__650eb,
 .tutorialContainer__650eb + .listItem__650eb {

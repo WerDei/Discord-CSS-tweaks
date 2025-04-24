@@ -1,20 +1,22 @@
 :root {
-  --sso-selected-border: 3px;
-  --sso-selected-color: var(--header-primary);
+    /* Set border thickness */
+    --sso-selected-border: 3px;
+    /* Change its color */
+    --sso-selected-color: var(--header-primary);
 }
 
 ul.stack_dbd263 {
-  padding-top: var(--sso-selected-border) !important;
-  margin-top: calc(var(--sso-selected-border) * -1);  
+    padding-top: var(--sso-selected-border) !important;
+    margin-top: calc(var(--sso-selected-border) * -1);
 }
 .blobContainer_e5445c.selected_e5445c {
-  --bssf-badge-color: var(--sso-selected-color);
-  margin: calc(var(--sso-selected-border) * -1);
-  border-width: var(--sso-selected-border);
+    --bssf-badge-color: var(--sso-selected-color);
+    margin: calc(var(--sso-selected-border) * -1);
+    border-width: var(--sso-selected-border);
 
-  border-radius: 14px;
-  border-style: solid;
-  border-color: var(--sso-selected-color);
-  background-color: var(--sso-selected-color);
-  transition: border-color 50ms ease-in;
+    border-radius: 14px;
+    border-style: solid;
+    border-color: var(--sso-selected-color);
+    background-color: var(--sso-selected-color);
+    transition: border-color 50ms ease-in;
 }

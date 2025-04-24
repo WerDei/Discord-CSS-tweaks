@@ -24,7 +24,7 @@ Optional: add any of these options to tweak the look
 ```
 
 # Selected server outline
-An accessibility feature, basically. Makes it super obvious which server is currently selected  
+An accessibility feature. Makes it super obvious which server is currently selected  
 
 ![image](https://github.com/user-attachments/assets/349f39bc-2176-4436-b4c8-45b46bed1842)
 
@@ -36,7 +36,7 @@ Options:
 :root {
   /* Set border thickness */
   --sso-selected-border: 3px;
-  /* Change its color */
+  /* Change border color */
   --sso-selected-color: var(--header-primary);
 }
 ```

@@ -1,3 +1,5 @@
+/* @import "https://raw.githubusercontent.com/WerDei/Discord-CSS-tweaks/refs/heads/main/bigger-servers.css"; */
+
 :root {
     --bssf-icon-size: 48px;
     --bssf-smol-icon-size: 40px;
@@ -14,7 +16,7 @@ ul.stack_dbd263 {
     height: fit-content !important;
     padding-bottom: 4px !important;
 }
-.expandedFolderBackground__48112 {
+.folderGroupBackground__48112 {
     --guildbar-folder-size: calc(var(--bssf-icon-size) + 8px);
 }
 
@@ -38,8 +40,8 @@ ul.stack_dbd263 {
 }
 
 /* keep folders, "new server" and "explore" smol */
-.wrapper__48112:not(.isExpanded__48112) div.wrapper_cc5dd2 {
-    --bssf-icon-size: var(--bssf-folder-size, var(--bssf-smol-icon-size));
+.folderGroup__48112:not(.isExpanded__48112) {
+    --guildbar-folder-size: var(--bssf-folder-size, var(--bssf-smol-icon-size));
 }
 .tutorialContainer__650eb,
 .tutorialContainer__650eb + .listItem__650eb {

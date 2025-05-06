@@ -1,74 +1,52 @@
-/* @import "https://raw.githubusercontent.com/WerDei/Discord-CSS-tweaks/refs/heads/main/bigger-servers.css"; */
-
 :root {
     --bssf-icon-size: 48px;
-    --bssf-smol-icon-size: 40px;
-    --bssf-badge-color: var(--background-base-lowest);
-
-    /* Don't shrink the folders */
-    /* --bssf-folder-size: 48px; */
-    /* Make the "Add a Server" and "Explore" buttons just as big */
-    /* --bssf-extras-size: 48px;  */
+    --guildbar-folder-size: 40px;
 }
 
-/* opened folder */
+.tutorialContainer__1f388 .wrapper_cc5dd2,
+#guild-list-unread-dms .wrapper_cc5dd2,
+.blobContainer_e5445c > .wrapper_cc5dd2 {
+    width: var(--bssf-icon-size) !important;
+    height: var(--bssf-icon-size) !important;
+    
+    > svg {
+        --bssf-icon-svg-size: calc(var(--bssf-icon-size) + 8px);
+        width: var(--bssf-icon-svg-size) !important;
+        height: var(--bssf-icon-svg-size) !important;
+        
+        use[href*="-upper_badge_masks"] {
+            transform: scale(0.8333333333) translate(8.3px, -0.5px);
+        }
+        use[href*="-lower_badge_masks"] {
+            transform: scale(0.8333333333) translate(8.3px, 8.5px);
+        }
+    }
+}
+#guild-list-unread-dms > *{
+    height: var(--bssf-icon-size) !important;
+}
+
+.folderButton__48112 
+{
+    foreignObject {
+        mask: url(#:r0:);
+    }
+    .upperBadge_cc5dd2,
+    .lowerBadge_cc5dd2 {
+        transform: translate(-4px, -4px);
+        margin: -2px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: var(--bssf-badge-color);
+        border-radius: var(--radius-round);
+
+    }
+}
+
 ul.stack_dbd263 {
     height: fit-content !important;
     padding-bottom: 4px !important;
 }
 .folderGroupBackground__48112 {
     --guildbar-folder-size: calc(var(--bssf-icon-size) + 8px);
-}
-
-/* enlarge things */
-.wrapper_cc5dd2 {
-    width: var(--bssf-icon-size) !important;
-    height: var(--bssf-icon-size) !important;
-
-    > svg {
-        --bssf-icon-svg-size: calc(var(--bssf-icon-size) + 8px);
-        width: var(--bssf-icon-svg-size) !important;
-        height: var(--bssf-icon-svg-size) !important;
-
-        /* Keeping consistent badge cutout is too hard with */
-        /* my spaghetti code. I simply fake it later on. */
-        [id$="-lower_badge_masks"],
-        [id$="-upper_badge_masks"] {
-            display: none;
-        }
-    }
-}
-
-/* keep folders, "new server" and "explore" smol */
-.folderGroup__48112:not(.isExpanded__48112) {
-    --guildbar-folder-size: var(--bssf-folder-size, var(--bssf-smol-icon-size));
-}
-.tutorialContainer__650eb,
-.tutorialContainer__650eb + .listItem__650eb {
-    --bssf-icon-size: var(--bssf-extras-size, var(--bssf-smol-icon-size));
-}
-
-/* DM container height*/
-#guild-list-unread-dms > *{
-    height: var(--bssf-icon-size) !important;
-}
-
-/* faking the badge cutout */
-.wrapper__48112.isExpanded__48112 {
-    /* Folder background is actually some transparency jank */
-    /* and not a constant, so please endure the horrors below: */
-    --bssf-bg-color: rgb(from var(--background-mod-subtle) r g b / none);
-    --bssf-badge-color: color-mix(
-        in srgb,
-        var(--background-base-lowest),
-        var(--bssf-bg-color) 8%
-    );
-}
-.upperBadge_cc5dd2,
-.lowerBadge_cc5dd2 {
-    margin: -3px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: var(--bssf-badge-color);
-    border-radius: var(--radius-round);
 }

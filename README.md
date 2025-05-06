@@ -13,16 +13,6 @@ Add this to your QuickCSS to apply:
 @import "https://raw.githubusercontent.com/WerDei/Discord-CSS-tweaks/refs/heads/main/bigger-servers.css";
 ```
 
-Optional: add any of these options to tweak the look
-```
-:root {
-  /* Don't shrink the folders */
-  --bssf-folder-size: 48px;
-  /* Make the "Add a Server" and "Explore" buttons just as big */
-  --bssf-extras-size: 48px; 
-}
-```
-
 # Selected server outline
 An accessibility feature. Makes it super obvious which server is currently selected  
 
